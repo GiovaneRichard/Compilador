@@ -1,0 +1,84 @@
+class
+ID ID
+{
+public
+static
+void
+main
+(
+TYPE_NAME_STRING
+[
+]
+ID ID
+)
+{
+System.out.println
+(
+new
+ID ID
+(
+)
+.
+ID ID
+(
+ID NUM_DECIM
+)
+)
+;
+}
+}
+class
+ID ID
+{
+public
+int
+ID ID
+(
+int
+ID ID
+)
+{
+int
+ID ID
+;
+ID ID
+ID ID
+;
+ID ID
+ID ID
+;
+ID ID
+=
+ID ID
+;
+if
+(
+ID ID
+<
+ID NUM_DECIM
+)
+ID ID
+=
+ID NUM_DECIM
+;
+else
+ID ID
+=
+ID ID
+*
+(
+this
+.
+ID ID
+(
+ID ID
+-
+ID NUM_DECIM
+)
+)
+;
+return
+ID ID
+;
+}
+}
