@@ -1,0 +1,221 @@
+// 
+
+PARSER_BEGIN(Parser)
+    public class Parser {
+        public static void main(String[] args) {
+            try{
+                Parser parser = new Parser(System.in);
+                parser.Start();
+            } catch (Throwable e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+PARSER_END(Parser)
+
+// BooleanValue
+TOKEN:
+{
+   <BOOLEANVALUE: ("true" | "false")> {System.out.println("BOOLEAN_VALUE " + image);}
+}
+
+// Only for MiniJava 
+// TypeNameString
+TOKEN:
+{
+   <TYPENAMESTRING: ("String")> {System.out.println("TYPE_NAME_STRING");}|
+   <MAIN: ("main")> {System.out.println(image);}|
+   <LENGTH: ("length")> {System.out.println(image);}|
+   <SYSTEMOUTPRINTLN: "System.out.println"> {System.out.println(image);}
+}
+
+// Keywords
+TOKEN:
+{
+    <ABSTRACT: "abstract"> {System.out.println(image);}|
+    <ASSERT: "assert"> {System.out.println(image);}|
+    <BOOLEAN: "boolean"> {System.out.println(image);}|
+    <BREAK: "break"> {System.out.println(image);}|
+    <BYTE: "byte"> {System.out.println(image);}|
+    <CASE: "case"> {System.out.println(image);}|
+    <CATCH: "catch"> {System.out.println(image);}|
+    <CHAR: "char"> {System.out.println(image);}|
+    <CLASS: "class"> {System.out.println(image);}|
+    <CONST: "const"> {System.out.println(image);}|
+    <CONTINUE: "continue"> {System.out.println(image);}|
+    <DO: "do"> {System.out.println(image);}|
+    <DOUBLE: "double"> {System.out.println(image);}|
+    <ELSE: "else"> {System.out.println(image);}|
+    <ENUM: "enum"> {System.out.println(image);}|
+    <EXTENDS: "extends"> {System.out.println(image);}|
+    <FINAL: "final"> {System.out.println(image);}|
+    <FINALLY: "finally"> {System.out.println(image);}|
+    <FLOAT: "float"> {System.out.println(image);}|
+    <FOR: "for"> {System.out.println(image);}|
+    <GOTO: "goto"> {System.out.println(image);}|
+    <IF: "if"> {System.out.println(image);}|
+    <IMPLEMENTS: "implements"> {System.out.println(image);}|
+    <IMPORT: "import"> {System.out.println(image);}|
+    <INSTANCEOF: "instanceof"> {System.out.println(image);}|
+    <INT: "int"> {System.out.println(image);}|
+    <INTERFACE: "interface"> {System.out.println(image);}|
+    <LONG: "long"> {System.out.println(image);}|
+    <NATIVE: "native"> {System.out.println(image);}|
+    <NEW: "new"> {System.out.println(image);}|
+    <PACKAGE: "package"> {System.out.println(image);}|
+    <PRIVATE: "private"> {System.out.println(image);}|
+    <PROTECTED: "protected"> {System.out.println(image);}|
+    <PUBLIC: "public"> {System.out.println(image);}|
+    <RETURN: "return"> {System.out.println(image);}|
+    <SHORT: "short"> {System.out.println(image);}|
+    <STATIC: "static"> {System.out.println(image);}|
+    <STRICTFP: "strictfp"> {System.out.println(image);}|
+    <SUPER: "super"> {System.out.println(image);}|
+    <SWITCH: "switch"> {System.out.println(image);}|
+    <SYNCHRONIZED: "synchronized"> {System.out.println(image);}|
+    <THIS: "this"> {System.out.println(image);}|
+    <THROW: "throw"> {System.out.println(image);}|
+    <THROWS: "throws"> {System.out.println(image);}|
+    <TRANSIENT: "transient"> {System.out.println(image);}|
+    <TRY: "try"> {System.out.println(image);}|
+    <UNDERSCORE: "_"> {System.out.println(image);}|
+    <VOID: "void"> {System.out.println(image);}|
+    <VOLATILE: "volatile"> {System.out.println(image);}|
+    <WHILE: "while"> {System.out.println(image);}
+}
+
+// Identifiers
+TOKEN:
+{
+    <IDENTIFIER: (<LETTER>(<LETTER>|<DIGIT>)*)> {System.out.println("ID " + image);}|
+    <#LETTER: ["a"-"z", "A"-"Z", "_", "$"]>|
+    <#DIGIT: ["0"-"9"]>
+}
+
+// DecimalNumeral
+TOKEN:
+{
+    <DECIMAL_NUMERAL: (<ZERO>|
+                      <NON_ZERO_DIGIT>(<DIGITS>)?|
+                      <NON_ZERO_DIGIT><UNDERSCORES><DIGITS>)> {System.out.println("NUM_DECIM " + image);}|
+    <#ZERO: "0">|
+    <#NON_ZERO_DIGIT: ["1"-"9"]>|
+    <#DIGITS: (<DIGIT>|<DIGIT>(<DIGITS_AND_UNDERSCORES>)?<DIGIT>)>|
+    <#DIGITS_AND_UNDERSCORES: ((<DIGIT>|<UNDERSCORE>)+)>|
+    <#UNDERSCORES: (<UNDERSCORE>)+>
+}
+
+// DecimalFloatingPointLiteral
+TOKEN:
+{
+    <DECIMAL_FLOATING_POINT: (<DIGITS>"."(<DIGITS>)?(<EXPONENT_PART>)?(<FLOAT_TYPE_SUFFIX>)?|
+                             "."<DIGITS>(<EXPONENT_PART>)?(<FLOAT_TYPE_SUFFIX>)?|
+                             <DIGITS><EXPONENT_PART>(<FLOAT_TYPE_SUFFIX>)?|
+                             <DIGITS>(<EXPONENT_PART>)?<FLOAT_TYPE_SUFFIX>)> {System.out.println("FLOAT_DECIM " + image);}|
+    <#EXPONENT_PART: (<EXPONENT_INDICATOR><SIGNED_INTEGER>)>|
+    <#EXPONENT_INDICATOR: ("e"|"E")>|
+    <#SIGNED_INTEGER: ((<SIGN>)?<DIGITS>)>|
+    <#SIGN: ("+"|"-")>|
+    <#FLOAT_TYPE_SUFFIX: ("f"|"F"|"d"|"D")>
+}
+
+// StringLiteral
+TOKEN:
+{
+    <STRING_LITERAL: ("\""(<STRING_CHARACTER>)*"\"")> {System.out.println("STRING " + image);}|
+    <#STRING_CHARACTER: (~["\\", "\""])>
+}
+
+// Separators
+TOKEN:
+{
+    <SEPARATORS: ("("|")"|"{"|"}"|"["|"]"|";"|"|"|"."|"@"|"::"|"...")> {System.out.println(image);}
+}
+
+// Operators
+TOKEN:
+{
+    <OPERATORS: ("="|">"|"<"|"!"|"~"|"?"|":"|"->"|
+                "+"|"-"|"*"|"/"|"&"|"|"|"^"|"%"|
+                "=="|">="|"<="|"!="|"&&"|"||"|"++"|"--"|
+                "<<"|">>"|">>>"|"+="|"-="|"*="|"/="|
+                "&="|"|="|"^="|"%="|"<<="|">>="|">>>=")> {System.out.println(image);}
+}
+
+// Spaces
+TOKEN:
+{
+    <SPACES: (" "|"\n"|"\t"|"\r")>
+}
+
+// Token priority by order
+void Start(): {}
+{
+    (
+	// Only for MiniJava
+	<SYSTEMOUTPRINTLN>|
+	<BOOLEANVALUE>|
+	<TYPENAMESTRING>|
+	<MAIN>|
+	<LENGTH>|
+        //Keywords
+        <ABSTRACT>|
+        <ASSERT>|
+        <BOOLEAN>|
+        <BREAK>|
+        <BYTE>|
+        <CASE>|
+        <CATCH>|
+        <CHAR>|
+        <CLASS>|
+        <CONST>|
+        <CONTINUE>|
+        <DO>|
+        <DOUBLE>|
+        <ELSE>|
+        <ENUM>|
+        <EXTENDS>|
+        <FINAL>|
+        <FINALLY>|
+        <FLOAT>|
+        <FOR>|
+        <GOTO>|
+        <IF>|
+        <IMPLEMENTS>|
+        <IMPORT>|
+        <INSTANCEOF>|
+        <INT>|
+        <INTERFACE>|
+        <LONG>|
+        <NATIVE>|
+        <NEW>|
+        <PACKAGE>|
+        <PRIVATE>|
+        <PROTECTED>|
+        <PUBLIC>|
+        <RETURN>|
+        <SHORT>|
+        <STATIC>|
+        <STRICTFP>|
+        <SUPER>|
+        <SWITCH>|
+        <SYNCHRONIZED>|
+        <THIS>|
+        <THROW>|
+        <THROWS>|
+        <TRANSIENT>|
+        <TRY>|
+        <UNDERSCORE>|
+        <VOID>|
+        <VOLATILE>|
+        <WHILE>|
+        
+        <IDENTIFIER>|
+        <DECIMAL_FLOATING_POINT>|
+        <DECIMAL_NUMERAL>|
+        <STRING_LITERAL>|
+        <OPERATORS>|
+        <SEPARATORS>|
+        <SPACES>
+    )*<EOF>
+}

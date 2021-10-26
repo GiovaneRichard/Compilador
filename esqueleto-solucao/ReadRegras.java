@@ -37,219 +37,227 @@ public class ReadRegras{
         switch(simbolo)
         {
             case "class":
-            tokenType = TokenType.CLASS;
-            break;
-        
-        case "public":
-            tokenType = TokenType.PUBLIC;
-            break;
+                tokenType = TokenType.CLASS;
+                break; 
 
-        case "static":
-            tokenType = TokenType.STATIC;
-            break;
+            case "public":
+                tokenType = TokenType.PUBLIC;
+                break; 
 
-        case "void":
-            tokenType = TokenType.VOID;
-            break;
-        
-        case "main":
-            tokenType = TokenType.MAIN;
-            break;
+            case "static":
+                tokenType = TokenType.STATIC;
+                break; 
 
-        case "A_PALAVRA_STRING":
-            tokenType = TokenType.A_PALAVRA_STRING;
-            break;
+            case "void":
+                tokenType = TokenType.VOID;
+                break;
 
-        case "extends":
-            tokenType = TokenType.EXTENDS;
-            break;
+            case "main":
+                tokenType = TokenType.MAIN;
+                break;
 
-        case "ID":
-            tokenType = TokenType.ID;
-            break;
-        
-        case "NUM_DECIM":
-            tokenType = TokenType.NUM_DECIM;
-            break;
+            case "A_PALAVRA_STRING":
+                tokenType = TokenType.A_PALAVRA_STRING;
+                break;
 
-        case "BOOLEAN_VALUE":
-            tokenType = TokenType.BOOLEAN_VALUE;
-            break;
+            case "String":
+                tokenType = TokenType.TYPE_NAME_STRING;
+                break;
 
-        case "{":
-            tokenType = TokenType.ABRE_CHAVE;
-            break;
-        
-        case "}":
-            tokenType = TokenType.FECHA_CHAVE;
-            break;
+            case "extends":
+                tokenType = TokenType.EXTENDS;
+                break;
 
-        case "[":
-            tokenType = TokenType.ABRE_COLCHETE;
-            break;
+            case "NUM_DECIM":
+                tokenType = TokenType.NUM_DECIM;
+                break;
 
-        case "]":
-            tokenType = TokenType.FECHA_COLCHETE;
-            break;
+            case "ID":
+                tokenType = TokenType.ID;
+                break;
 
-        case "(":
-            tokenType = TokenType.ABRE_PARENTESE;
-            break;
+            case "{":
+                tokenType = TokenType.ABRE_CHAVE;
+                break;
 
-        case ")":
-            tokenType = TokenType.FECHA_PARENTESE;
-            break;
+            case "}":
+                tokenType = TokenType.FECHA_CHAVE;
+                break;
 
-        case ".":
-            tokenType = TokenType.PONTO;
-            break;
+            case "[":
+                tokenType = TokenType.ABRE_COLCHETE;
+                break;
 
-        case ",":
-            tokenType = TokenType.VIRGULA;
-            break;
+            case "]":
+                tokenType = TokenType.FECHA_COLCHETE;
+                break;
 
-        case ";":
-            tokenType = TokenType.PONTO_E_VIRGULA;
-            break;
+            case "(":                
+                tokenType = TokenType.ABRE_PARENTESE;
+                break;
 
-        case "=":
-            tokenType = TokenType.IGUAL;
-            break;
+            case ")":
+                tokenType = TokenType.FECHA_PARENTESE;
+                break;
 
-        case "&&":
-            tokenType = TokenType.OP_E;
-            break;
+            case ".":
+                tokenType = TokenType.PONTO;
+                break;
 
-        case "||":
-            tokenType = TokenType.OP_OU;
-            break;
+            case ",":
+                tokenType = TokenType.VIRGULA;
+                break;
 
-        case "<":
-            tokenType = TokenType.OP_MENOR;
-            break;
+            case ";":
+                tokenType = TokenType.PONTO_E_VIRGULA;
+                break;
 
-        case "+":
-            tokenType = TokenType.OP_MAIS;
-            break;
+            case "=":
+                tokenType = TokenType.IGUAL;
+                break;
 
-        case "-":
-            tokenType = TokenType.OP_MENOS;
-            break;
+            case "&&":
+                tokenType = TokenType.OP_E;
+                break;
 
-        case "*":
-            tokenType = TokenType.OP_VEZES;
-            break;
+            case "||":
+                tokenType = TokenType.OP_OU;
+                break;
 
-        case "!":
-            tokenType = TokenType.OP_EXCLAMACAO;
-            break;
+            case "<":
+                tokenType = TokenType.OP_MENOR;
+                break;
 
-        case "int":
-            tokenType = TokenType.INT;
-            break;
+            case "+":
+                tokenType = TokenType.OP_MAIS;    
+                break;
 
-        case "boolean":
-            tokenType = TokenType.BOOLEAN_TYPE;
-            break;
+            case "-":
+                tokenType = TokenType.OP_MENOS;
+                break;
 
-        case "new":
-            tokenType = TokenType.NEW;
-            break;
+            case "*":
+                tokenType = TokenType.OP_VEZES;
+                break;
 
-        case "this":
-            tokenType = TokenType.THIS;
-            break;
+            case "!":
+                tokenType = TokenType.OP_EXCLAMACAO;
+                break;
 
-        case "System.out.println":
-            tokenType = TokenType.SYSTEM_OUT_PRINTLN;
-            break;
+            case "int":
+                tokenType = TokenType.INT;
+                break;
 
-        case "while":
-            tokenType = TokenType.WHILE;
-            break;
+            case "BOOLEAN_VALUE":
+                tokenType = TokenType.BOOLEAN_VALUE;
+                break;
 
-        case "if":
-            tokenType = TokenType.IF;
-            break;
+            case "boolean":
+                tokenType = TokenType.BOOLEAN_TYPE;
+                break;
 
-        case "else":
-            tokenType = TokenType.ELSE;
-            break;
+            case "new":
+                tokenType = TokenType.NEW;    
+                break;
 
-        case "return":
-            tokenType = TokenType.RETURN;
-            break;
+            case "this":
+                tokenType = TokenType.THIS;
+                break;
 
-        case "String":
-            tokenType = TokenType.TYPE_NAME_STRING;
-            break;
+            case "System.out.println":
+                tokenType = TokenType.SYSTEM_OUT_PRINTLN;
+                break;
 
-        case "length":
-            tokenType = TokenType.LENGTH;
-            break;
+            case "while":
+                tokenType = TokenType.WHILE;
+                break;
 
-        case "I":
-            tokenType = TokenType.I;
-            break;
+            case "if":
+                tokenType = TokenType.IF;
+                break;
 
-        case "Cx":
-            tokenType = TokenType.Cx;
-            break;
+            case "else":
+                tokenType = TokenType.ELSE;
+                break;
 
-        case "M":
-            tokenType = TokenType.M;
-            break;
+            case "return":
+                tokenType = TokenType.RETURN;
+                break;
 
-        case "C":
-            tokenType = TokenType.C;
-            break;
+            case "I":
+                tokenType = TokenType.I;
+                break;
 
-        case "Vx":
-            tokenType = TokenType.Vx;
-            break;
+            case "M":
+                tokenType = TokenType.M;
+                break;
 
-        case "V":
-            tokenType = TokenType.V;
-            break;
+            case "Cx":
+                tokenType = TokenType.Cx;
+                break;
 
-        case "Fx":
-            tokenType = TokenType.Fx;
-            break;
+            case "C":
+                tokenType = TokenType.C;
+                break;
 
-        case "F":
-            tokenType = TokenType.F;
-            break;
+            case "Vx":
+                tokenType = TokenType.Vx;
+                break;
 
-        case "Px":
-            tokenType = TokenType.Px;
-            break;
-        
-        case "Pz":
-            tokenType = TokenType.Pz;
-            break;
+            case "V":
+                tokenType = TokenType.V;
+                break;
 
-        case "T":
-            tokenType = TokenType.T;
-            break;
+            case "Fx":
+                tokenType = TokenType.Fx;
+                break;
 
-        case "Sx":
-            tokenType = TokenType.Sx;
-            break;
+            case "F":
+                tokenType = TokenType.F;
+                break;
 
-        case "E":
-            tokenType = TokenType.E;
-            break;
+            case "Px":
+                tokenType = TokenType.Px;
+                break;
 
-        case "Ex":
-            tokenType = TokenType.Ex;
-            break;
+            case "Pz":
+                tokenType = TokenType.Pz;
+                break;
 
-        case "Ez":
-            tokenType = TokenType.Ez;
-            break;
+            case "T":
+                tokenType = TokenType.T;
+                break;
 
-        default:
-            break;
+            case "Sx":
+                tokenType = TokenType.Sx;
+                break;
+
+            case "S":
+                tokenType = TokenType.S;
+                break;
+
+            case "E":
+                tokenType = TokenType.E;
+                break;
+
+            case "Ex":
+                tokenType = TokenType.Ex;
+                break;
+
+            case "Ez":
+                tokenType = TokenType.Ez;
+                break;
+
+            case "$":
+                tokenType = TokenType.ACC;
+                break;
+
+            case "length":
+                tokenType = TokenType.LENGTH;
+                break;
+                
+            default:
+                break;
         }
 
         return tokenType;

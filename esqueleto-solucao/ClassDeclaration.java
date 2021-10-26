@@ -4,6 +4,7 @@ import java.util.List;
  */
 public class ClassDeclaration {
     public ID className;
+    public ID extend;
     public List<VariableDeclaration> variableDeclarationList;
     public List<FunctionDeclaration> functionDeclarationList;
     

@@ -8,4 +8,11 @@ public class No{
     boolean isTerminal;
     List<No> filho = new ArrayList<No>();
     TokenType tokenType;
+
+
+    @Override
+    public String toString(){
+        return simbolo + " " + acao;
+    }
+
 }

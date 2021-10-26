@@ -18,12 +18,12 @@ public class Teste{
         List<List<Regra>> listaRegras = new ArrayList<List<Regra>>();
         listaRegras = loadRegras.getList();
 
-        // for(List<Regra> lista: listaRegras){
-        //     // System.out.println(lista);
-        //    for(Regra r: lista){
-        //         System.out.println(r.simbolo + "  " + r.acao + " " + r.nextStado );
-        //    }
-        // }
+        for(List<Regra> lista: listaRegras){
+            // System.out.println(lista);
+           for(Regra r: lista){
+                System.out.println(r.simbolo + "  " + r.acao + " " + r.nextStado );
+           }
+        }
 
         
 
@@ -51,7 +51,7 @@ public class Teste{
         p.parser(listaTokens);
 
     } catch (Exception e) {
-        System.out.println("Erro nos Testes!!!" + e);
+        //System.out.println("Erro nos Testes!!!" + e);
     }
    
 

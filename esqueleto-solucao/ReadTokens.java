@@ -38,6 +38,8 @@ public class ReadTokens{
             Token token = new Token();
             String[] strSplit = str.split(" ");
 
+            // teste
+            //System.out.println("strSplit -> " + strSplit[0]);
 
             switch (strSplit[0]) 
             {
@@ -74,6 +76,12 @@ public class ReadTokens{
                 case "STRING":
                     token.type = TokenType.A_PALAVRA_STRING;
                     token.image = strSplit[1];
+                    ListaTokens.add(token);
+                    break;
+                
+                case "TYPE_NAME_STRING":
+                    token.type = TokenType.TYPE_NAME_STRING;
+                    token.image = "String";
                     ListaTokens.add(token);
                     break;
 
@@ -270,12 +278,11 @@ public class ReadTokens{
                     break;
 
                 default:
-                    // System.out.println("Erro ao ler o arquivo de Tokens!!");
                     break;
             }
 
         }
     }
-    
+
 
 }
