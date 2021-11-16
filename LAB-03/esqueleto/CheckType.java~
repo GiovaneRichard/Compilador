@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class CheckType  {
+
+
+   // private Table tabelaSimbolos = new Table();
+   // private boolean correto = true;
+
+
+    public void visita(VariableDeclaration var){
+
+        if ( (var.variableType instanceof TypeInt) || (var.variableType instanceof TypeBoolean)  && (var.variableName instanceof ID) )
+        {
+            tabelaSimbolos.put(Symbol.simbolo(var.bariableName.id), var.variableType);
+        }
+
+    }
+
+    
+
+
+    public boolean correctTypes(FunctionDeclaration f) {
+
+        
+    }
+
+
+}
